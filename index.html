@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio de Olai Fernández García: IA, ciberseguridad y apps para iOS.">
+<title>Olai Fernández García</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{
+  --bg:#F6F7F8; --surface:#FFFFFF; --ink:#15191E; --muted:#5B6570; --line:#DDE2E7;
+  --accent:#2447B8; --accent-soft:#E6EBFA;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101317; --surface:#171B21; --ink:#E9ECEF; --muted:#98A2AD; --line:#2A3038;
+    --accent:#8FA8FF; --accent-soft:#1D2540;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101317; --surface:#171B21; --ink:#E9ECEF; --muted:#98A2AD; --line:#2A3038;
+  --accent:#8FA8FF; --accent-soft:#1D2540;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px;padding-block:72px 56px;display:flex;flex-direction:column;gap:64px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+
+header{display:flex;flex-direction:column;gap:20px}
+.status{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.status i{width:8px;height:8px;border-radius:50%;background:#2E9D6A;box-shadow:0 0 0 3px color-mix(in srgb,#2E9D6A 20%,transparent)}
+h1{font-family:var(--display);font-weight:650;font-size:clamp(40px,8vw,64px);line-height:1.02;letter-spacing:-.025em;margin:0;text-wrap:balance}
+.lede{font-size:19px;color:var(--muted);max-width:58ch;margin:0}
+.lede strong{color:var(--ink);font-weight:500}
+
+.about p{margin:0 0 14px;max-width:62ch}
+
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.area{padding:20px 20px 4px 0;border-bottom:1px solid var(--line)}
+.area:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
+.area h3{font-family:var(--display);font-weight:500;font-size:19px;margin:0 0 6px;letter-spacing:-.01em}
+.area p{margin:0 0 16px;font-size:14.5px;color:var(--muted)}
+@media (max-width:620px){
+  .areas{grid-template-columns:1fr}
+  .area,.area:nth-child(even){padding:18px 0 4px;border-left:0}
+}
+
+.projects-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.projects-head .note{font-size:13px;color:var(--muted);margin:0 0 20px}
+.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.project h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;font-weight:500}
+.project .meta{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
+.project p{grid-column:1 / -1;margin:0;color:var(--muted);max-width:62ch}
+.project .feat{grid-column:1 / -1;margin:0;padding-left:20px;color:var(--muted);max-width:62ch}
+.project .feat li + li{margin-top:2px}
+.stack{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.stack span{font-family:var(--mono);font-size:12px;color:var(--ink);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+@media (max-width:480px){.project{grid-template-columns:1fr}.project .meta{text-align:left}}
+
+.contact{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.row .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:80px}
+.row .v{flex:1;font-size:17px;user-select:all;word-break:break-all}
+.row .v a{user-select:auto}
+button.copy{font:500 13px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+button.copy:hover{border-color:var(--accent);color:var(--accent)}
+.todo{font-size:13px;color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:160px 1fr;margin:0;border-top:1px solid var(--line)}
+.skills dt,.skills dd{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.skills dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:15px}
+@media (max-width:480px){.skills{grid-template-columns:1fr}.skills dt{border-bottom:0;padding-bottom:0}}
+.edu{display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap;margin-bottom:24px}
+.edu h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0 0 4px;letter-spacing:-.01em;text-wrap:balance}
+.edu p{margin:0;color:var(--muted)}
+.edu .meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+footer{font-family:var(--mono);font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <span class="status"><i aria-hidden="true"></i>Empezando prácticas en IA generativa</span>
+    <h1>Olai Fernández García</h1>
+    <p class="lede">Estudiante de <strong>Ingeniería Informática en Tecnologías de la Información</strong> en la Universidad de Oviedo. Mi perfil es híbrido: ciberseguridad, inteligencia artificial, desarrollo nativo para Apple y redes.</p>
+  </header>
+
+  <section class="about" aria-labelledby="sobre">
+    <h2 class="label" id="sobre">Sobre mí</h2>
+    <p>Estoy en 4.º curso del grado, en el programa bilingüe, y pasé dos años formándome en Escocia, lo que me da soltura con el inglés técnico.</p>
+    <p>Mis lenguajes principales son Python y SQL, y escribo código con la seguridad en mente desde el diseño. Tengo base en machine learning gracias a las prácticas de la universidad y me motiva construir soluciones algorítmicas robustas, eficientes y protegidas.</p>
+    <p>También tengo una base sólida en C/C++, me muevo con soltura en entornos Unix-like y desarrollo apps nativas para iOS y macOS. Me interesa experimentar con la integración de modelos de IA en aplicaciones y, apoyándome en lo que sé de protocolos de red, llevar el software al Internet de las Cosas (IoT), integrando microcontroladores en entornos industriales.</p>
+  </section>
+
+  <section aria-labelledby="areas">
+    <h2 class="label" id="areas">Áreas de trabajo</h2>
+    <div class="areas">
+      <div class="area">
+        <h3>IA y machine learning</h3>
+        <p>Redes neuronales, funciones de activación, optimización y desarrollo asistido por IA.</p>
+      </div>
+      <div class="area">
+        <h3>Redes y seguridad</h3>
+        <p>Análisis de tráfico, protocolos y topologías de red con Wireshark y Cisco Packet Tracer.</p>
+      </div>
+      <div class="area">
+        <h3>Apps para iOS y macOS</h3>
+        <p>Aplicaciones nativas con Swift y SwiftUI, con funciones inteligentes de Apple.</p>
+      </div>
+      <div class="area">
+        <h3>Internet de las Cosas</h3>
+        <p>Software y microcontroladores conectados a la red, con vistas a entornos industriales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="proyectos">
+    <h2 class="label" id="proyectos">Proyectos</h2>
+    <ul class="projects">
+      <li class="project">
+        <h3>PcComponentIA</h3>
+        <span class="meta">Personal · iOS / iPadOS</span>
+        <p>App para identificar, aprender y documentar los componentes de un PC mientras lo montas, lo mantienes o buscas una avería. Tiene un escáner con cámara basado en un modelo propio de Core ML, que funciona en el dispositivo y que sigo entrenando para ampliar las piezas que reconoce.</p>
+        <p>Además incluye:</p>
+        <ul class="feat">
+          <li>Guía visual tipo AR sobre la placa base.</li>
+          <li>Diccionario técnico con fichas de montaje.</li>
+          <li>Checklist de montaje.</li>
+          <li>Diagnóstico de averías por LEDs.</li>
+          <li>Gestor de builds con presupuesto.</li>
+          <li>Asistente de hardware en español que funciona con Apple Intelligence.</li>
+        </ul>
+        <div class="stack"><span>Swift</span><span>SwiftUI</span><span>Core ML</span><span>Vision</span><span>AVFoundation</span><span>Foundation Models</span></div>
+      </li>
+      <li class="project">
+        <h3>EconomIA</h3>
+        <span class="meta">Personal · iOS y Android</span>
+        <p>App de finanzas personales con versión para Apple y para Android. Registra movimientos, pagos recurrentes, presupuestos por categoría y objetivos de ahorro. Puede leer las notificaciones del banco para añadir gastos y categorizarlos automáticamente.</p>
+        <p>Cada mes analiza ingresos, gastos fijos y variables y calcula una puntuación de salud financiera de 0 a 100. Avisa cuando un presupuesto pasa del 80 % y da recomendaciones para mejorar la tasa de ahorro. Los datos se sincronizan en la nube y la app consulta precios de mercado y tipos de cambio.</p>
+        <div class="stack"><span>Swift</span><span>SwiftUI</span><span>Kotlin</span><span>Firebase</span></div>
+      </li>
+      <li class="project">
+        <h3>Sistema de gestión COIIPA</h3>
+        <span class="meta">Académico · Equipo</span>
+        <p>Desarrollo en equipo con arquitectura MVC. Diseño del modelo relacional e integración de datos con SQL para garantizar su integridad y consistencia, con pruebas unitarias en JUnit.</p>
+        <div class="stack"><span>Java</span><span>SQL</span><span>MVC</span><span>JUnit</span></div>
+      </li>
+      <li class="project">
+        <h3>Introducción al machine learning</h3>
+        <span class="meta">Práctica de laboratorio</span>
+        <p>Entrenamiento de modelos en Python aplicando los conceptos matemáticos de base, incluido el cálculo de la función de pérdida (error cuadrático medio, MSE) y la evaluación de resultados.</p>
+        <div class="stack"><span>Python</span><span>Redes neuronales</span><span>MSE</span></div>
+      </li>
+      <li class="project">
+        <h3>Redes, ciberseguridad e IoT</h3>
+        <span class="meta">Práctica de laboratorio</span>
+        <p>Captura de paquetes y análisis de tráfico de red con Wireshark. Configuración y simulación de topologías y protocolos de red con Cisco Packet Tracer, con primeras pruebas prácticas integrando microcontroladores Arduino en la red.</p>
+        <div class="stack"><span>Wireshark</span><span>Cisco Packet Tracer</span><span>Arduino</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="habilidades">
+    <h2 class="label" id="habilidades">Habilidades</h2>
+    <dl class="skills">
+      <dt>Lenguajes</dt><dd>Python, SQL, C/C++, Java, Swift</dd>
+      <dt>IA y ML</dt><dd>Redes neuronales, funciones de activación, optimización matemática, integración de modelos de IA, desarrollo asistido por IA</dd>
+      <dt>Redes, seguridad e IoT</dt><dd>Wireshark, Cisco Packet Tracer, análisis de tráfico, protocolos de comunicación y topologías de red, microcontroladores (Arduino)</dd>
+      <dt>Sistemas</dt><dd>Unix-like (macOS), iOS, Windows, Android</dd>
+      <dt>Herramientas</dt><dd>Git/GitHub, Docker, Xcode</dd>
+      <dt>Web</dt><dd>HTML5, CSS3</dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="formacion">
+    <h2 class="label" id="formacion">Formación e idiomas</h2>
+    <div class="edu">
+      <div>
+        <h3>Grado en Ingeniería Informática en Tecnologías de la Información</h3>
+        <p>Universidad de Oviedo · Programa bilingüe · 4.º curso</p>
+      </div>
+      <span class="meta">Graduación prevista: julio de 2027</span>
+    </div>
+    <dl class="skills">
+      <dt>Español</dt><dd>Nativo</dd>
+      <dt>Inglés</dt><dd>Fluido (2 años estudiando en Escocia)</dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="contacto">
+    <h2 class="label" id="contacto">Contacto</h2>
+    <div class="contact">
+      <div class="row">
+        <span class="k">Email</span>
+        <span class="v" id="email">olaifg77@gmail.com</span>
+        <button class="copy" id="copy-email" type="button">Copiar</button>
+      </div>
+      <div class="row">
+        <span class="k">GitHub</span>
+        <span class="v"><a href="https://github.com/OlaiFG7" target="_blank" rel="noopener">github.com/OlaiFG7</a></span>
+      </div>
+      <div class="row">
+        <span class="k">LinkedIn</span>
+        <span class="v"><a href="https://www.linkedin.com/in/olai-fernandez-garcia-a12897222/" target="_blank" rel="noopener">linkedin.com/in/olai-fernandez-garcia</a></span>
+      </div>
+      <div class="row">
+        <span class="k">Ubicación</span>
+        <span class="v">Gijón, Asturias</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Olai Fernández García</footer>
+</main>
+
+<script>
+(function(){
+  const btn=document.getElementById('copy-email');
+  const el=document.getElementById('email');
+  btn.addEventListener('click',()=>{
+    const done=()=>{btn.textContent='Copiado';setTimeout(()=>btn.textContent='Copiar',1600);};
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Seleccionado';setTimeout(()=>btn.textContent='Copiar',1600);};
+    try{navigator.clipboard.writeText(el.textContent.trim()).then(done,fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+</body>
+</html>
